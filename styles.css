@@ -7,44 +7,87 @@ html, body {
     font-family: 'Roboto', sans-serif;
 }
 .main-wrap {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
     background: blueviolet;
-    /*min-height: 100%;*/
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     height: 100%;
 }
+
+.left-container {     
+    flex: 1
+}
+.topics-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px; /* возможно следйет убрать закругление*/
+    padding: 10px;
+    background-color: whitesmoke;
+    height: calc(100% - 20px);
+}
+
+.right-container {
+    display: flex; /*почему оно не наследует?????????*/
+    flex-direction: column; 
+    flex: 2;
+    border-radius: 10px;
+}
+.companion-name-container {
+   /* margin: 0 auto;*/
+    flex: 2 2 4%;
+    /*max-height: 4%;*/
+    padding: 5px;
+    background-color: chocolate;
+    border-radius: inherit;
+    font-size: x-large;
+    text-align: center;
+}
 .messages-field {
+    flex: 21 21 88%;
     display: flex;
     flex-direction: column;
     background-color: cadetblue;
-    border-radius: 5px;
-    /*align-items: flex-end;*/
-    height: 80%;
-    /*min-height: 100%;*/
-    overflow-y: scroll;
+    border-radius: inherit;
+    padding: 5px;
+    /*max-height: 93%;*/
+    overflow: auto;
+}
+.messages-field::-webkit-scrollbar {
+    width: 0px;
 }
 .message-item {
-    background-color: chocolate;
+    /*background-color: chocolate;*/
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
     max-width: 70%;
-
 }
 .mine {
     align-self: flex-end;
+    background-color: chocolate;
 }
 .companion {
     align-self: flex-start;
+    background-color: rgb(33, 126, 126)
 }
 
-#companion-name-container {
-    margin: 0 auto;
-    padding: 5px;
-    background-color: chocolate;
-    border-radius: 5px;
-    font-size: x-large;
-    text-align: center;
+.new-message-form {
+    border-radius: inherit;
+    display: flex;
+    flex: 2 2 8%;
+    background-color: red;
+}
+
+.text-input {
+    margin: 5px;
+    border-radius: inherit;
+    flex: 6;
+}
+.submit-button {
+    margin: 5px;
+    border-radius: inherit;
+    flex: 1;
 }
